@@ -16,6 +16,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.name = "hi"
   end
 
+  config.vm.provision :itamae do |config|
+    config.recipes = %w(./recipe.rb)
+    # config.json = 'node.json'
+  end
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
